@@ -1,0 +1,1 @@
+这是一个用idea编写的Maven+SpringMVC4.3.2.RELEASE+Hibernate5.2.2.Final的测试
