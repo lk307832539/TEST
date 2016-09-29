@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>../algorithms</module>
+        <module>shiro_test</module>
     </modules>
     <groupId>groupId</groupId>
     <artifactId>java</artifactId>
