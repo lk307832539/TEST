@@ -3,7 +3,7 @@
 *.iml
 *.ipr
 *.iws
-.idea/
-target/
+*.idea/
+*.target/
 *.git
-*.out
+*.out/
