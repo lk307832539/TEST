@@ -4,6 +4,6 @@
 *.ipr
 *.iws
 *.git
-**/.idea/
-**/target/
-**/out/
+**/.idea/*
+**/target/*
+**/out/.idea/*
