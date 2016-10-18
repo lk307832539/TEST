@@ -7,3 +7,10 @@
 **/.idea/*
 **/target/*
 **/out/*
+
+#MyeclipseÅäÖÃ
+*.springBeans
+*.project
+*.myhibernatedata
+*.classpath
+**/.settings/*

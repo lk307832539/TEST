@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 配置为开发模式 -->
+	<constant name="struts.devMode" value="true" />
+    <!-- 更改struts2请求Action的后缀名，默认为action。若想去掉后缀，设为","即可 -->
+	<constant name="struts.action.extension" value="," />
+	<!-- 配置struts的对象由spring来管理 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<package name="default" extends="struts-default">
+		<default-action-ref name="notFound" />
+		<action name="notFound">
+			<result>/error/404.jsp</result>
+		</action>
+	</package>
+	
+	<package name="system" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="login">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</global-results>
+		<!-- 配置action -->
+		<!-- class写bean的名称 -->
+		<action name="testAction" class="testAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		<!--<action name="login" class="LoginAction">
+			<result name="fail">index.jsp</result>
+			<result name="success">main.jsp</result>
+		</action>-->
+	</package>
+
+</struts>    
