@@ -5,18 +5,14 @@ import java.util.List;
 import com.entity.User;
 
 public abstract interface UserMng {
-	public abstract User addUser(User user);
 
-	public abstract List<User> getAllUser();
+    public boolean addUser(String userName, String password, int role);
 
-	public abstract User delUser(Integer id);
+    public boolean login(String userName, String password, int role);
 
-	public abstract User getUser(Integer id);
+    public String updateUser(int id, String userName, String password);
 
-	public abstract User getUserByUserName(String userName);
+    public List<User> getAllUser();
 
-	public abstract User updateUser(User user);
-
-	public abstract User getUser(String userName, String password, int role);
-
+    public boolean delUser(int id);
 }

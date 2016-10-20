@@ -7,6 +7,9 @@
 	<constant name="struts.action.extension" value="," />
 	<!-- 配置struts的对象由spring来管理 -->
 	<constant name="struts.objectFactory" value="spring"></constant>
+
+
+
 	<package name="default" extends="struts-default">
 		<default-action-ref name="notFound" />
 		<action name="notFound">
@@ -19,15 +22,28 @@
 			<result name="login">/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</global-results>
+
 		<!-- 配置action -->
 		<!-- class写bean的名称 -->
 		<action name="testAction" class="testAction">
 			<result name="success">/index.jsp</result>
 		</action>
-		<!--<action name="login" class="LoginAction">
-			<result name="fail">index.jsp</result>
-			<result name="success">main.jsp</result>
-		</action>-->
+
+		<action name="loginAction" class="loginAction">
+			<result name="success">/main.jsp</result>
+			<result name="fail">/index.jsp</result>
+		</action>
+
+		<action name="addUser" class="managerUserAction" method="addUser">
+		<result name="success">/main.jsp</result>
+	</action>
+		<action name="getAllUser" class="managerUserAction" method="getAllUser">
+			<result name="success">/main.jsp</result>
+		</action>
+		<action name="updateUser" class="managerUserAction" method="updateUser">
+			<result name="success">/main.jsp</result>
+		</action>
+
 	</package>
 
 </struts>    

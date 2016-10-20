@@ -18,10 +18,6 @@ public interface UserDAO {
 
 	public void updateUser(User user);
 
-	public User getUser(String userName, String password);
-
-	public User getUser(String userName, String password, int role);
-
-	public User findByNamePwd(String userName, String password, int role);
+	public List<User> findByNamePwd(String userName, String password, int role);
 
 }

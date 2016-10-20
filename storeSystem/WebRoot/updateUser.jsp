@@ -11,7 +11,7 @@
 <head>
     <base href="<%=basePath%>">
 
-    <title>登录页面</title>
+    <title>注册页面</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -42,7 +42,7 @@
 </div>
 <div
         style="display: inline; position: absolute; margin-top: 20%; margin-left: 40%; width: 100%;">
-    <form action="loginAction" method="post">
+    <form action="addUser" method="post">
         <table>
             <tr>
                 <td>用户名</td>

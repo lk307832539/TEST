@@ -11,7 +11,7 @@
 <head>
     <base href="<%=basePath%>">
 
-    <title>登录页面</title>
+    <title>修改页面</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -42,7 +42,7 @@
 </div>
 <div
         style="display: inline; position: absolute; margin-top: 20%; margin-left: 40%; width: 100%;">
-    <form action="loginAction" method="post">
+    <form action="updateUser" method="post">
         <table>
             <tr>
                 <td>用户名</td>
@@ -53,15 +53,8 @@
                 <td><input type="password" name="password"/></td>
             </tr>
             <tr>
-                <td>角色</td>
-                <td><select name="role">
-                    <option value="0">操作员</option>
-                    <option value="1">管理员</option>
-                </select></td>
-            </tr>
-            <tr>
                 <td></td>
-                <td><input type="submit" value="登录"/> <input type="reset"
+                <td><input type="submit" value="确定"/> <input type="reset"
                                                              value="取消"/></td>
             </tr>
         </table>
