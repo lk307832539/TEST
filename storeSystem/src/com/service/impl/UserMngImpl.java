@@ -22,6 +22,7 @@ public class UserMngImpl implements UserMng {
     public boolean addUser(String userName, String password, int role) {
         User user = userDao.getUserByUserName(userName);
         if (user == null) {
+            user = new User();
             user.setUsername(userName);
             user.setPassword(password);
             user.setRole(role);
@@ -71,6 +72,18 @@ public class UserMngImpl implements UserMng {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public User getUser(int id) {
+        User user = this.userDao.getUser(id);
+        return user;
+    }
+
+    @Override
+    public User getUserByUserName(String userName) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

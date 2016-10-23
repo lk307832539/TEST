@@ -1,11 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
-    String basePath = request.getScheme() + "://"
-            + request.getServerName() + ":" + request.getServerPort()
-            + path + "/";
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -18,9 +16,6 @@
     <meta http-equiv="expires" content="0">
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
-    <!--
-            <link rel="stylesheet" type="text/css" href="styles.css">
-            -->
     <style type="text/css">
         body {
             margin: 0;
@@ -29,33 +24,31 @@
     </style>
 </head>
 <body>
-<%@ taglib uri="/struts-tags" prefix="struts" %>
-<div
-        style="width: 100%; height: 100%; display: inline; position: absolute; margin-top: 0px;">
+<div style="width: 100%; height: 100%; display: inline; position: absolute; margin-top: 0px;">
     <img src="back.jpg" style="width: 100%; height: 100%;"/>
 </div>
-<div
-        style="display: inline; position: absolute; margin-top: 5%; margin-left: 30%;">
+<div style="display: inline; position: absolute; margin-top: 5%; margin-left: 30%;">
     <p style="font-size: 50px; font-family:'隶书'; color: #666666;">
-        农产品仓库管理管理系统</p>
-
+        农产品仓库管理管理系统
+    </p>
 </div>
-<div
-        style="display: inline; position: absolute; margin-top: 20%; margin-left: 40%; width: 100%;">
-    <form action="updateUser" method="post">
+<div style="display: inline; position: absolute; margin-top: 20%; margin-left: 40%; width: 100%;">
+    <form action="user/updateUser" method="post">
+        <input type="hidden" name="userId" value="${user.userId}">
         <table>
             <tr>
                 <td>用户名</td>
-                <td><input type="text" name="userName"/></td>
+                <td><input type="text" name="userName" value="${user.username}"/></td>
             </tr>
             <tr>
                 <td>密码</td>
-                <td><input type="password" name="password"/></td>
+                <td><input type="password" name="password" value="${user.password}"/></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="确定"/> <input type="reset"
-                                                             value="取消"/></td>
+                <td>
+                    <input type="submit" value="确定"/>
+                    <input type="reset" value="取消"/></td>
             </tr>
         </table>
     </form>

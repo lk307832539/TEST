@@ -22,7 +22,7 @@ public class ManagerUserAction extends ActionSupport {
     private String userName;
     private String password;
     private int role;
-    private int id;
+    private int userId;
 
 
     public ManagerUserAction(String userName, String password, int role, int id) {
@@ -59,12 +59,12 @@ public class ManagerUserAction extends ActionSupport {
         this.role = role;
     }
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String addUser() {
@@ -79,23 +79,20 @@ public class ManagerUserAction extends ActionSupport {
     public String getAllUser() {
         List<User> userList = userMng.getAllUser();
         ActionContext actionContext = ActionContext.getContext();
-
-        //get HttpServletRequest
-        Map<String,Object> request = (Map) actionContext.get("request");
-
-        request.put("userList", userList);
+        //Map<String, Object> request = (Map) actionContext.get("request");
+        actionContext.put("userList", userList);
         return "success";
     }
 
     public String updateUser() {
-        String message = userMng.updateUser(id, userName, password);
+        String message = userMng.updateUser(userId, userName, password);
 
         HttpServletRequest request = ServletActionContext.getRequest();
         return "success";
     }
 
     public String delUser() {
-        boolean deluser =userMng.delUser(id);
+        boolean deluser = userMng.delUser(userId);
         if (deluser == true) {
             return "success";
         } else {
@@ -103,6 +100,12 @@ public class ManagerUserAction extends ActionSupport {
         }
     }
 
+    public String updateUserInfo(){
+        User user = this.userMng.getUser(userId);
+        ActionContext actionContext = ActionContext.getContext();
+        actionContext.put("user", user);
+        return "success";
+    }
 
 
 }

@@ -29,6 +29,5 @@ main <br><a href="getAllUser">getAllUser</a>
         </c:forEach>
     </ul>
 </s:if>
-${a}
 </body>
 </html>
