@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <#include "../include/css.html">
+</head>
+<body>
+<div class="container">
+    <div>
+        <table id="exportTable">
+    <thead>
+        <tr>
+            <td>material</td>
+            <td>materialdescription</td>
+            <td>plnt</td>
+            <td>name1</td>
+            <td>sloc</td>
+            <td>mvt</td>
+        </tr>
+    </thead>
+    <tbody>
+    <#list list as inventory>
+        <tr>
+            <td>${(inventory.material)!}</td>
+            <td>${(inventory.materialdescription)!}</td>
+            <td>${(inventory.plnt)!}</td>
+            <td>${(inventory.name1)!}</td>
+            <td>${(inventory.sloc)!}</td>
+            <td>${(inventory.mvt)!}</td>
+        </tr>
+    </#list>
+    </tbody>
+</table>
+    </div>
+</div>
+
+<#include "../include/bottom.html">
+<script>
+    $(document).ready(function() {
+        $('#exportTable').DataTable();
+    } );
+</script>
+</body>
+</html>

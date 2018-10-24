@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <#include "../include/css.html">
+</head>
+<body>
+<div class="container">
+    <div>
+        <table id="exportTable">
+    <thead>
+        <tr>
+            <td>customsNumber</td>
+            <td>reportedDate</td>
+            <td>exportDate</td>
+            <td>type</td>
+            <td>trainningWay</td>
+            <td>uniteNum</td>
+            <td>listNum</td>
+            <td>fertMlfb</td>
+            <td>bomNum</td>
+            <td>singleNum</td>
+            <td>fertQty</td>
+            <td>fertDoc</td>
+            <td>material</td>
+            <td>piecesItemNum</td>
+            <td>consumablesQty</td>
+            <td>piecesItemUnit</td>
+            <td>lastUpdate</td>
+        </tr>
+    </thead>
+    <tbody>
+    <#list list as export>
+        <tr>
+            <td>${(export.customsNumber)!}</td>
+            <td>${(export.reportedDate)!}</td>
+            <td>${(export.exportDate)!}</td>
+            <td>${(export.type)!}</td>
+            <td>${(export.trainningWay)!}</td>
+            <td>${(export.uniteNum)!}</td>
+            <td>${(export.listNum)!}</td>
+            <td>${(export.fertMlfb)!}</td>
+            <td>${(export.bomNum)!}</td>
+            <td>${(export.singleNum)!}</td>
+            <td>${(export.fertQty)!}</td>
+            <td>${(export.fertDoc)!}</td>
+            <td>${(export.material)!}</td>
+            <td>${(export.piecesItemNum)!}</td>
+            <td>${(export.consumablesQty)!}</td>
+            <td>${(export.piecesItemUnit)!}</td>
+            <td>${(export.lastUpdate?time)!}</td>
+        </tr>
+    </#list>
+    </tbody>
+</table>
+    </div>
+</div>
+
+<#include "../include/bottom.html">
+<script>
+    $(document).ready(function() {
+        $('#exportTable').DataTable();
+    } );
+</script>
+</body>
+</html>
